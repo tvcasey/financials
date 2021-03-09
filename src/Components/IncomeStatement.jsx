@@ -11,9 +11,9 @@ const IncomeStatement = (props) => {
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>NET INCOME</th>
+          <th>YEAR</th>
+          <th>REVENUES</th>
         </tr>
       </thead>
       <tbody>
@@ -31,9 +31,9 @@ const IncomeStatement = (props) => {
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <td>ROMAN</td>
+          <td>GREEK</td>
+          <td>OTTOMAN</td>
         </tr>
       </tbody>
     </Table>
