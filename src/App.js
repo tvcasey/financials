@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import IncomeStatement from './Components/IncomeStatement';
 
 function App() {
   return (
     <div className="App">
+      <IncomeStatement />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

@@ -5,7 +5,7 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
-const Example = (props) => {
+const IncomeStatement = (props) => {
   return (
     <Table striped>
       <thead>
@@ -40,4 +40,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default IncomeStatement;
