@@ -5,12 +5,12 @@ import axios from 'axios';
 function Ratios() {
 
   const [ratio, setRatio] = useState({Symbol});
-  const [stock, setStock] = useState("IBM");
+  const [stock, setStock] = useState(" ");
 
 
 
 useEffect(() => {
-  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stock}&apikey=demo`)
+  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stock}&apikey=W76ULI2MV44V3PSF`)
     .then(res => {
       console.log(res.data);
       setRatio(res.data);
@@ -28,7 +28,11 @@ useEffect(() => {
   return (     
     <Table striped>      
         <div>
-            <input type='text' onChange={setStock} />            
+            <input type='text'
+              placeholder='Enter Stock Symbol'
+              value={stock}
+              onChange={(e) => setStock(e.target.value)} 
+            />            
         <thead>
           <tr>
             <th>COMPANY</th>
