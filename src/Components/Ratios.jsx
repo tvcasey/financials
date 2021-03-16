@@ -4,13 +4,13 @@ import axios from 'axios';
 
 function Ratios() {
 
-  const [ratio, setRatio] = useState("IBM");
-//  const [stock, setStock] = useState("IBM");
+  const [ratio, setRatio] = useState("GM");
+  const [stock, setStock] = useState("GM");
 
 
 
 useEffect(() => {
-  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ratio}&apikey=W76ULI2MV44V3PSF`)
+  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stock}&apikey=W76ULI2MV44V3PSF`)
     .then(res => {
       console.log(res.data);
       setRatio(res.data);
@@ -31,8 +31,8 @@ useEffect(() => {
             <input 
               type='text'
               placeholder='Enter Stock Symbol'
-              value={ratio.Symbol}
-              onChange={(e) => setRatio(e.target.value)} 
+              value={stock}
+              onChange={(e) => setStock(e.target.value)} 
             />            
         <thead>
           <tr>
