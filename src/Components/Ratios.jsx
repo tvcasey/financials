@@ -4,8 +4,8 @@ import axios from 'axios';
 
 function Ratios() {
 
-  const [ratio, setRatio] = useState("GM");
-  const [stock, setStock] = useState("GM");
+  const [ratio, setRatio] = useState("");
+  const [stock, setStock] = useState(" ");
 
 
 
@@ -23,6 +23,10 @@ useEffect(() => {
 // onChange() {
 //     Stock
 // }
+  const onChange = (event) => {
+    setStock(event.target.value);
+    console.log(event);
+  }
 
 
   return (     
@@ -32,8 +36,8 @@ useEffect(() => {
               type='text'
               placeholder='Enter Stock Symbol'
               value={stock}
-              onChange={(e) => setStock(e.target.value)} 
-            />            
+              onChange={onChange}/>
+                      
         <thead>
           <tr>
             <th>COMPANY</th>
