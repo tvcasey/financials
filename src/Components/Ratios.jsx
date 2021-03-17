@@ -5,12 +5,12 @@ import axios from 'axios';
 function Ratios() {
 
   const [ratio, setRatio] = useState("");
-  const [stock, setStock] = useState(" ");
+  //const [stock, setStock] = useState(" ");
 
 
 
 useEffect(() => {
-  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stock}&apikey=W76ULI2MV44V3PSF`)
+  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ratio}&apikey=W76ULI2MV44V3PSF`)
     .then(res => {
       console.log(res.data);
       setRatio(res.data);
@@ -23,25 +23,31 @@ useEffect(() => {
 // onChange() {
 //     Stock
 // }
-  const onChange = (event) => {
-    setStock(event.target.value);
+  const handleChange = (event) => {
+    setRatio(event.target.value);
     console.log(event);
   }
-
+  const handleSubmit = (event) => {
+    alert("Change the stock ticker to: " + ratio);
+    setRatio(ratio);
+    event.preventDefault();
+  }
 
   return (     
     <Table striped>      
-        <div>
+      <div>
+          <form onSubmit={handleSubmit}>
             <input 
               type='text'
               placeholder='Enter Stock Symbol'
-              value={stock}
-              onChange={onChange}/>
-                      
+              value={ratio}
+              onChange={handleChange}/>
+            <button type="submit" value="Submit">Press Me</button>                       
+          </form>
         <thead>
           <tr>
             <th>COMPANY</th>
-            <th>{ratio.Symbol}</th>
+            <td>{ratio.Symbol}</td>
           </tr>
         </thead>
         <tbody>
@@ -70,7 +76,7 @@ useEffect(() => {
             <td>{ratio.SharesOutstanding/1000000000}</td>
           </tr>
         </tbody>
-        </div>
+      </div>  
                   ))
     </Table>
         );
