@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
 import axios from 'axios';
+import $ from 'jquery';
 
 function Ratios() {
 
@@ -10,7 +11,7 @@ function Ratios() {
 
 
 useEffect(() => {
-  axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ratio}&apikey=W76ULI2MV44V3PSF`)
+  axios.get('https://www.alphavantage.co/query?function=OVERVIEW&symbol=ratio&apikey=W76ULI2MV44V3PSF')
     .then(res => {
       console.log(res.data);
       setRatio(res.data);
@@ -46,7 +47,7 @@ useEffect(() => {
           </form>
         <thead>
           <tr>
-            <th>COMPANY</th>
+            <th scope='row'>STOCK</th>
             <td>{ratio.Symbol}</td>
           </tr>
         </thead>
